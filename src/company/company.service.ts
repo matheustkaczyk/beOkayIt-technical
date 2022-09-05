@@ -1,19 +1,19 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { CompanyEntity } from './company.entity';
-import { CompanyRepository } from './company.repository';
+import { Repository } from 'typeorm';
+import { Company } from './company.entity';
 import { CreateCompanyDto } from './dto/create-company.dto';
 import { UpdateCompanyDto } from './dto/update-company.dto';
 
 @Injectable()
 export class CompanyService {
   constructor(
-    @InjectRepository(CompanyRepository)
-    private companyRepository: CompanyRepository,
+    @InjectRepository(Company)
+    private companyRepository: Repository<Company>,
   ) {}
 
-  create(createCompanyDto: CreateCompanyDto): Promise<CompanyEntity> {
-    return this.companyRepository.createCompany(createCompanyDto);
+  async create(createCompanyDto: CreateCompanyDto): Promise<Company> {
+    return await this.companyRepository.create(createCompanyDto);
   }
 
   findAll() {

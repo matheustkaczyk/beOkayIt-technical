@@ -1,6 +1,7 @@
-import { BaseEntity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { BaseEntity, PrimaryGeneratedColumn, Column, Entity, Unique } from 'typeorm';
 
-export class CompanyEntity extends BaseEntity {
+@Entity()
+export class Company extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -8,6 +9,7 @@ export class CompanyEntity extends BaseEntity {
   nome: string;
   
   @Column()
+  @Unique(['cnpj'])
   cnpj: string;
 
   @Column()
