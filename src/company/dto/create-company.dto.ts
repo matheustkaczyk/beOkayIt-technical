@@ -16,7 +16,7 @@ export class CreateCompanyDto {
   @IsNotEmpty()
   @IsString()
   @Matches(DATE_REGEX)
-  data_fundacao: Date;
+  data_fundacao: string;
 
   @IsNotEmpty()
   @IsNumber()
