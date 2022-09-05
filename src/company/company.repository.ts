@@ -4,7 +4,7 @@ import { CreateCompanyDto } from './dto/create-company.dto';
 
 @EntityRepository(CompanyEntity)
 export class CompanyRepository extends Repository<CompanyEntity> {
-  async createCompany(createCompanyDto: CreateCompanyDto) {
+  async createCompany(createCompanyDto: CreateCompanyDto): Promise<CompanyEntity> {
     const { nome, cnpj, data_fundacao, valor_hora } = createCompanyDto;
 
     const company = new CompanyEntity();
@@ -14,5 +14,7 @@ export class CompanyRepository extends Repository<CompanyEntity> {
     company.valor_hora = valor_hora;
 
     await company.save();
+
+    return company;
   }
 }
