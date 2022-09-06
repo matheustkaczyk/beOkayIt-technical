@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString, Matches, IsNumberString, Min } from "class-validator";
+import { IsNotEmpty, IsString, Matches } from "class-validator";
 
 const CNPJ_REGEX = /^\d{2}\d{3}\d{3}\d{4}\d{2}$/;
 const DATE_REGEX = /^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/;
