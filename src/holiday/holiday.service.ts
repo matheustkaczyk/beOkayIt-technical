@@ -20,8 +20,8 @@ export class HolidayService {
     return await Holiday.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} holiday`;
+  async findOne(id: number) {
+    return await this.holidayRepository.findOne({ where: { id } });
   }
 
   update(id: number, updateHolidayDto: UpdateHolidayDto) {
