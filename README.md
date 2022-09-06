@@ -52,6 +52,7 @@ O contexto dessa API foi prover uma estrutura para cadastro de empresas e ter o 
 
 ## **Rotas | Endpoints**
 
+## Empresa
 ### POST - Cadastrar uma empresa "/empresa"
 ```json
 {
@@ -72,6 +73,25 @@ O contexto dessa API foi prover uma estrutura para cadastro de empresas e ter o 
 ```
 
 ### DELETE - Delete uma empresa pelo seu id "/empresa/:id"
+
+## Feriados
+### POST - Adiciona um novo feriado a lista "/feriado"
+```json
+  "nome": "yyyy-mm-dd",
+  "data": string
+```
+
+### GET - Pega todos os feriados "/feriado"
+
+### GET - Pega um feriado pelo seu ID "/feriado/:id"
+
+### PATCH - Atualiza um feriado pelo seu ID "/feriado/:id"
+```json
+  "nome": string,
+  "data": "yyyy-mm-dd"
+```
+
+### DELETE - Deleta um feriado pelo seu ID "/feriado/:id"
 
 ---
 ## **Sobre o autor**
