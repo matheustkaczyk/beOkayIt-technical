@@ -93,7 +93,7 @@ export class MeasurementService {
       const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
   
       return {
-        valor_calculado: ((diffDays - weekends() - holidays()) * workingHours) * company.valor_hora,
+        valor_calculado: parseFloat((((diffDays - weekends() - holidays()) * workingHours) * company.valor_hora).toFixed(2)),
       }
 
       } else {
