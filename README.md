@@ -46,13 +46,13 @@ Para rodar esse projeto é necessário ter instalado em sua máquina o runtime N
 4. Para rodar a aplicação digite **`npm run start`** em seu terminal
 
 ## **Contexto**
-
 O contexto dessa API foi prover uma estrutura para cadastro de empresas e ter o controle dos feriados e dias úteis para a precificação de serviços.
+
 ---
 
 ## **Rotas | Endpoints**
 
-### POST - Cadastrar uma empresa
+### POST - Cadastrar uma empresa "/empresa"
 ```json
 {
   "nome": string,
@@ -61,6 +61,17 @@ O contexto dessa API foi prover uma estrutura para cadastro de empresas e ter o 
   "valor_hora": number
 }
 ```
+### GET - Pegar todas as empresas cadastradas "/empresa"
+
+### GET - Pega uma empresa pelo seu ID "/empresa/:id"
+
+### PATCH - Atualiza uma empresa pelo seu id "/empresa/:id"
+```json
+  "nome": string,
+  "valor_hora": string
+```
+
+### DELETE - Delete uma empresa pelo seu id "/empresa/:id"
 
 ---
 ## **Sobre o autor**
