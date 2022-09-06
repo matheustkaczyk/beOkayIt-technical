@@ -18,6 +18,7 @@
 
 - [Pré Requisitos](#pré-requisitos)
 - [Instalação](#instalação)
+- [Variáveis de Ambiente](#variáveis-de-ambiente)
 - [Seed](#seed)
 - [Contexto e Regras de Negócio](#contexto-e-regras-de-negócio)
 - [Rotas | Endpoints](#rotas-|-endpoints)
@@ -34,8 +35,6 @@ Para rodar esse projeto é necessário ter instalado em sua máquina o runtime N
 
 ## **Instalação**
 
-### Utilização local
-
 1. Você pode baixar o projeto em sua máquina utilizando o comando:
 
    **`git@github.com:matheustkaczyk/beOkayIt-technical.git`**
@@ -45,6 +44,18 @@ Para rodar esse projeto é necessário ter instalado em sua máquina o runtime N
 3. Instale as dependências do projeto digitando **`npm install`** em seu terminal
 
 4. Para rodar a aplicação digite **`npm run start`** em seu terminal
+
+## **Variáveis de Ambiente**
+Para executar a API você precisará configurar variáveis de ambiente.
+1. Na pasta raiz do projeto crie um arquivo **`.env`**
+2. Popule com as seguintes informações;
+```
+  HOST=*IP DO BD*
+  DATABASE=*NOME DO BD*
+  PORT=*PORTA DO BD*
+  USER=*USUÁRIO DO BD*
+  PASSWORD=*SENHA DO BD*
+```
 
 ## **Seed**
 
