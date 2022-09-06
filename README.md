@@ -1,73 +1,122 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Be Okay IT - Teste técnico
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+### Projeto de uma API em Nest.js, que contempla banco de dados utilizando TypeORM.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+---
 
-## Description
+## Visão Geral
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+##### Projeto de uma API em Nest.js, contempla um CRUD de empresas e feriados, nas quais são usadas para precificar serviços com base em dias trabalháveis.
 
-## Installation
+##### Bibliotecas:
 
-```bash
-$ npm install
+- [Nest.js](http://nestjs.com/) v^9.0.11 - Framework
+- [Node.js](https://nodejs.org) v^16.17.0 - Runtime
+- [TypeORM](https://typeorm.io/) v0.3.9 - ORM Banco de dados
+
+## **Sumário**
+
+- [Pré Requisitos](#pré-requisitos)
+- [Instalação](#instalação)
+- [Seed](#seed)
+- [Contexto e Regras de Negócio](#contexto-e-regras-de-negócio)
+- [Rotas | Endpoints](#rotas-|-endpoints)
+- [Próximos passos](#próximos-passos)
+- [Sobre o autor](#sobre-o-autor)
+
+---
+
+## **Pré requisitos**
+
+Para rodar esse projeto é necessário ter instalado em sua máquina o runtime Node.js e o gerenciador de pacotes NPM.
+
+---
+
+## **Instalação**
+
+### Utilização local
+
+1. Você pode baixar o projeto em sua máquina utilizando o comando:
+
+   **`git@github.com:matheustkaczyk/beOkayIt-technical.git`**
+
+2. Entre na pasta do projeto digitando o comando **`cd beOkayIt-technical`**
+
+3. Instale as dependências do projeto digitando **`npm install`** em seu terminal
+
+4. Para rodar a aplicação digite **`npm run start`** em seu terminal
+
+## **Seed**
+
+Para facilitar, criei um seed que popula o banco de dados de feriados, para rodar é só efetuar **`npm run seed:run`**
+
+## **Contexto**
+O contexto dessa API foi prover uma estrutura para cadastro de empresas e ter o controle dos feriados e dias úteis para a precificação de serviços.
+
+---
+
+## **Rotas | Endpoints**
+
+## Empresa
+### POST - Cadastrar uma empresa "/empresa"
+```json
+{
+  "nome": string,
+  "cnpj": string,
+  "data_fundacao": string,
+  "valor_hora": number
+}
+```
+### GET - Pegar todas as empresas cadastradas "/empresa"
+
+### GET - Pega uma empresa pelo seu ID "/empresa/:id"
+
+### PATCH - Atualiza uma empresa pelo seu id "/empresa/:id"
+```json
+  "nome": string,
+  "valor_hora": string
 ```
 
-## Running the app
+### DELETE - Delete uma empresa pelo seu id "/empresa/:id"
 
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+## Feriados
+### POST - Adiciona um novo feriado a lista "/feriado"
+```json
+  "nome": "yyyy-mm-dd",
+  "data": string
 ```
 
-## Test
+### GET - Pega todos os feriados "/feriado"
 
-```bash
-# unit tests
-$ npm run test
+### GET - Pega um feriado pelo seu ID "/feriado/:id"
 
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+### PATCH - Atualiza um feriado pelo seu ID "/feriado/:id"
+```json
+  "nome": string,
+  "data": "yyyy-mm-dd"
 ```
 
-## Support
+### DELETE - Deleta um feriado pelo seu ID "/feriado/:id"
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+## Cálculo
+### POST - Efetua o cálculo de precificação de serviços "/calculo"
+```json
+  "cnpj": string,
+  "data_inicio": string,
+  "data_fim": string
+```
+Retorno:
+```json
+  "valor_calculado": number
+```
 
-## Stay in touch
+---
+## **Sobre o autor**
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Obrigado por ter lido até aqui!
 
-## License
+Eu me chamo Matheus, e sou desenvolvedor web fullstack. Comecei meus estudos no ano de 2020 e estou me apaixonando cada dia que passa, através dos estudos, por tecnologia e desenvolvimento. Esse projeto e esse README foram desenvolvidos como um desafio pessoal. Eu empenhei muito carinho na construção de cada linha.
 
-Nest is [MIT licensed](LICENSE).
+[Você pode olhar mais dos meus repositórios aqui](https://github.com/matheustkaczyk)
+
+[Ou se conectar comigo no linkedin!](https://www.linkedin.com/in/matheustkaczykribeiro/)
