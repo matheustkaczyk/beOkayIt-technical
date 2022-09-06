@@ -16,8 +16,8 @@ export class CompanyService {
     return await this.companyRepository.create(createCompanyDto).save();
   }
 
-  findAll() {
-    return `This action returns all company`;
+  async findAll() {
+    return await this.companyRepository.find();
   }
 
   findOne(id: number) {
