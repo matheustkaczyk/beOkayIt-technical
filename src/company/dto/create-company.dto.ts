@@ -20,6 +20,6 @@ export class CreateCompanyDto {
   data_fundacao: string;
 
   @IsNotEmpty()
-  @Matches(VALUE_REGEX)
+  @Matches(VALUE_REGEX, { message: "Valor deve ser positivo com até duas casas decimais" })
   valor_hora: number;
 }
