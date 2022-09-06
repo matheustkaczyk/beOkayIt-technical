@@ -8,12 +8,12 @@ export class OrmExceptionFilter implements ExceptionFilter {
     const ctx = host.switchToHttp();
     const response = ctx.getResponse<Response>();
     const request = ctx.getRequest<Request>();
-    const status = exception.message;
+    const message = exception.message;
 
     response
       .status(400)
       .json({
-        statusCode: status,
+        message,
         timestamp: new Date().toISOString(),
         path: request.url,
       });
