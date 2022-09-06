@@ -1,6 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { CompanyModule } from './company/company.module';
 import { HolidayModule } from './holiday/holiday.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -14,7 +12,7 @@ import { typeOrmConfig } from './config/typeorm.config';
     HolidayModule,
     TypeOrmModule.forRoot(typeOrmConfig),
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
