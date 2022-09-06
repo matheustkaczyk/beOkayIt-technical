@@ -28,7 +28,7 @@ export class HolidayService {
     return await this.holidayRepository.update(id, updateHolidayDto);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} holiday`;
+  async remove(id: number) {
+    return await this.holidayRepository.delete(id);
   }
 }
