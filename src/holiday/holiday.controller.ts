@@ -24,6 +24,7 @@ export class HolidayController {
   }
 
   @Patch(':id')
+  @UsePipes(ValidationPipe)
   update(@Param('id') id: string, @Body() updateHolidayDto: UpdateHolidayDto) {
     return this.holidayService.update(+id, updateHolidayDto);
   }

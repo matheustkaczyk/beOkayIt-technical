@@ -1,4 +1,12 @@
-import { PartialType } from '@nestjs/mapped-types';
-import { CreateHolidayDto } from './create-holiday.dto';
+import { IsNotEmpty, Matches,  } from "class-validator";
 
-export class UpdateHolidayDto extends PartialType(CreateHolidayDto) {}
+const DATE_REGEX = /^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/;
+
+export class UpdateHolidayDto {
+  @IsNotEmpty()
+  nome: string;
+
+  @IsNotEmpty()
+  @Matches(DATE_REGEX, { message: "Data inválida" })
+  data: string;
+}

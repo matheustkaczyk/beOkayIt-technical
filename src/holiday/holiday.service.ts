@@ -24,8 +24,8 @@ export class HolidayService {
     return await this.holidayRepository.findOne({ where: { id } });
   }
 
-  update(id: number, updateHolidayDto: UpdateHolidayDto) {
-    return `This action updates a #${id} holiday`;
+  async update(id: number, updateHolidayDto: UpdateHolidayDto) {
+    return await this.holidayRepository.update(id, updateHolidayDto);
   }
 
   remove(id: number) {
