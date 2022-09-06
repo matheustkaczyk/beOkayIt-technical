@@ -1,4 +1,4 @@
-import { Controller, Post, Body } from '@nestjs/common';
+import { Controller, Post, Body, UsePipes, ValidationPipe } from '@nestjs/common';
 import { MeasurementService } from './measurement.service';
 import { MeasurementDto } from './dto/measurement.dto';
 
@@ -9,6 +9,7 @@ export class MeasurementController {
   ) {}
 
   @Post()
+  @UsePipes(ValidationPipe)
   calculate(@Body() measurementDto: MeasurementDto){
     return this.measurementService.calculate(measurementDto);
   }
