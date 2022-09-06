@@ -7,6 +7,6 @@ import { Holiday } from './holiday.entity';
 @Module({
   imports: [TypeOrmModule.forFeature([Holiday])],
   controllers: [HolidayController],
-  providers: [HolidayService]
+  providers: [HolidayService],
 })
 export class HolidayModule {}
