@@ -18,6 +18,7 @@
 
 - [Pré Requisitos](#pré-requisitos)
 - [Instalação](#instalação)
+- [Seed](#seed)
 - [Contexto e Regras de Negócio](#contexto-e-regras-de-negócio)
 - [Rotas | Endpoints](#rotas-|-endpoints)
 - [Próximos passos](#próximos-passos)
@@ -44,6 +45,10 @@ Para rodar esse projeto é necessário ter instalado em sua máquina o runtime N
 3. Instale as dependências do projeto digitando **`npm install`** em seu terminal
 
 4. Para rodar a aplicação digite **`npm run start`** em seu terminal
+
+## **Seed**
+
+Para facilitar, criei um seed que popula o banco de dados de feriados, para rodar é só efetuar **`npm run seed:run`**
 
 ## **Contexto**
 O contexto dessa API foi prover uma estrutura para cadastro de empresas e ter o controle dos feriados e dias úteis para a precificação de serviços.
