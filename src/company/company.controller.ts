@@ -1,7 +1,8 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UsePipes, ValidationPipe } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UsePipes, ValidationPipe, UseFilters } from '@nestjs/common';
 import { CompanyService } from './company.service';
 import { CreateCompanyDto } from './dto/create-company.dto';
 import { UpdateCompanyDto } from './dto/update-company.dto';
+import { OrmExceptionFilter } from './typeorm.filter';
 
 @Controller('empresa')
 export class CompanyController {
@@ -9,6 +10,7 @@ export class CompanyController {
 
   @Post()
   @UsePipes(ValidationPipe)
+  @UseFilters(new OrmExceptionFilter())
   create(@Body() createCompanyDto: CreateCompanyDto) {
     return this.companyService.create(createCompanyDto);
   }
