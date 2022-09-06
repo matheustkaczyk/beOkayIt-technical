@@ -20,8 +20,8 @@ export class CompanyService {
     return await this.companyRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} company`;
+  async findOne(id: number) {
+    return await this.companyRepository.findOne({ where: { id } });
   }
 
   update(id: number, updateCompanyDto: UpdateCompanyDto) {
