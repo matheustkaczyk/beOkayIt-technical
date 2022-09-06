@@ -1,4 +1,4 @@
-import { BaseEntity, PrimaryGeneratedColumn, Column, Entity, Unique } from 'typeorm';
+import { BaseEntity, PrimaryGeneratedColumn, Column, Entity, Unique,  } from 'typeorm';
 
 @Entity()
 export class Company extends BaseEntity {
@@ -15,6 +15,6 @@ export class Company extends BaseEntity {
   @Column()
   data_fundacao: string;
 
-  @Column()
+  @Column("decimal", { precision: 5, scale: 2 })
   valor_hora: number;
 }
