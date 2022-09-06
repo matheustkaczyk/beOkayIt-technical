@@ -28,7 +28,7 @@ export class CompanyService {
     return await this.companyRepository.update(id, updateCompanyDto);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} company`;
+  async remove(id: number) {
+    return await this.companyRepository.delete(id);
   }
 }
