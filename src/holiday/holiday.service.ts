@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { CreateHolidayDto } from './dto/create-holiday.dto';
 import { UpdateHolidayDto } from './dto/update-holiday.dto';
+import { Holiday } from './holiday.entity';
 
 @Injectable()
 export class HolidayService {
@@ -8,8 +9,8 @@ export class HolidayService {
     return 'This action adds a new holiday';
   }
 
-  findAll() {
-    return `This action returns all holiday`;
+  async findAll() {
+    return await Holiday.find();
   }
 
   findOne(id: number) {
