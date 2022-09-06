@@ -93,6 +93,18 @@ O contexto dessa API foi prover uma estrutura para cadastro de empresas e ter o 
 
 ### DELETE - Deleta um feriado pelo seu ID "/feriado/:id"
 
+## Calculo
+### POST - Efetua o cálculo de precificação de serviços "/calculo"
+```json
+  "cnpj": string,
+  "data_inicio": string,
+  "data_fim": string
+```
+Retorno:
+```json
+  "valor_calculado": number
+```
+
 ---
 ## **Sobre o autor**
 
