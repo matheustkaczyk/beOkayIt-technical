@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UsePipes, ValidationPipe } from '@nestjs/common';
 import { HolidayService } from './holiday.service';
 import { CreateHolidayDto } from './dto/create-holiday.dto';
 import { UpdateHolidayDto } from './dto/update-holiday.dto';
@@ -8,6 +8,7 @@ export class HolidayController {
   constructor(private readonly holidayService: HolidayService) {}
 
   @Post()
+  @UsePipes(ValidationPipe)
   create(@Body() createHolidayDto: CreateHolidayDto) {
     return this.holidayService.create(createHolidayDto);
   }
