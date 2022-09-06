@@ -5,8 +5,8 @@ import { Holiday } from './holiday.entity';
 
 @Injectable()
 export class HolidayService {
-  create(createHolidayDto: CreateHolidayDto) {
-    return 'This action adds a new holiday';
+  async create(createHolidayDto: CreateHolidayDto) {
+    return await Holiday.create(createHolidayDto).save();
   }
 
   async findAll() {
