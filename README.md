@@ -22,7 +22,6 @@
 - [Seed](#seed)
 - [Contexto e Regras de Negócio](#contexto-e-regras-de-negócio)
 - [Rotas | Endpoints](#rotas-|-endpoints)
-- [Próximos passos](#próximos-passos)
 - [Sobre o autor](#sobre-o-autor)
 
 ---
